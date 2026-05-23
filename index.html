@@ -840,7 +840,11 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
+document.querySelectorAll('.card-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.getElementById('order').scrollIntoView({behavior:'smooth'});
+  });
+});
 document.getElementById('orderForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   const res = await fetch(this.action, {
