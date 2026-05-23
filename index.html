@@ -841,11 +841,18 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-document.getElementById('orderForm').addEventListener('submit', function(e) {
+document.getElementById('orderForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  document.getElementById('successMsg').style.display = 'block';
-  this.reset();
-  setTimeout(() => document.getElementById('successMsg').style.display = 'none', 5000);
+  const res = await fetch(this.action, {
+    method: 'POST',
+    body: new FormData(this),
+    headers: { 'Accept': 'application/json' }
+  });
+  if (res.ok) {
+    document.getElementById('successMsg').style.display = 'block';
+    this.reset();
+    setTimeout(() => document.getElementById('successMsg').style.display = 'none', 5000);
+  }
 });
 </script>
 </body>
