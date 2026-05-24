@@ -954,5 +954,12 @@ function startDownload(fileUrl) {
     <a href="#order" onclick="document.getElementById('designerModal').style.display='none'" style="display:block; margin-top:1.5rem; padding:14px; background:var(--red); color:#fff; border-radius:6px; text-align:center; font-weight:600; letter-spacing:1px; text-decoration:none;">БҮРТГҮҮЛЭХ →</a>
   </div>
 </div>
+  <script>
+function openHireModal(designerName) {
+  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+  document.querySelector('select[name="type"]').value = 'Дизайнер ажиллуулах';
+  document.querySelector('textarea[name="description"]').value = 'Дизайнер: ' + designerName;
+}
+</script>
 </body>
 </html>
