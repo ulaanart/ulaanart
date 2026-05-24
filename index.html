@@ -859,5 +859,50 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
   }
 });
 </script>
+  <!-- PAYMENT MODAL -->
+<div id="payModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:#1a1a1a; border:1px solid var(--gold); border-radius:12px; padding:2.5rem; max-width:420px; width:90%; text-align:center; position:relative;">
+    <button onclick="document.getElementById('payModal').style.display='none'" style="position:absolute; top:12px; right:16px; background:none; border:none; color:#888; font-size:20px; cursor:pointer;">✕</button>
+    <h3 style="color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:1.8rem; margin-bottom:0.5rem;">Төлбөрийн мэдээлэл</h3>
+    <p style="color:#aaa; font-size:0.85rem; margin-bottom:1.5rem;">Доорх дансанд шилжүүлэг хийнэ үү</p>
+    <div style="background:#242424; border-radius:8px; padding:1.2rem; margin-bottom:1.5rem; text-align:left;">
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+        <span style="color:#888; font-size:0.85rem;">Банк</span>
+        <span style="color:#fff; font-weight:600;">Хаан банк</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+        <span style="color:#888; font-size:0.85rem;">IBAN</span>
+        <span style="color:#fff; font-weight:600;">74000500 5957070053</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+        <span style="color:#888; font-size:0.85rem;">Нэр</span>
+        <span style="color:#fff; font-weight:600;">M.Erdenetulga</span>
+      </div>
+      <div style="display:flex; justify-content:space-between;">
+        <span style="color:#888; font-size:0.85rem;">Дүн</span>
+        <span style="color:var(--gold); font-weight:700; font-size:1.1rem;" id="payAmount">₮3,500</span>
+      </div>
+    </div>
+    <p style="color:#888; font-size:0.8rem; margin-bottom:1.2rem;">Шилжүүлэг хийсний дараа доорх товчийг дарна уу</p>
+    <button id="downloadBtn" onclick="startDownload()" style="width:100%; padding:14px; background:var(--red); color:#fff; border:none; border-radius:6px; font-size:1rem; font-weight:600; cursor:pointer; letter-spacing:1px;">✓ ТӨЛБӨР ХИЙЛЭЭ — ТАТАХ</button>
+  </div>
+</div>
+
+<script>
+function openPayModal(fileUrl, amount) {
+  document.getElementById('payAmount').textContent = amount;
+  document.getElementById('downloadBtn').onclick = function() { startDownload(fileUrl); };
+  document.getElementById('payModal').style.display = 'flex';
+}
+function startDownload(fileUrl) {
+  const a = document.createElement('a');
+  a.href = fileUrl;
+  a.download = '';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  document.getElementById('payModal').style.display = 'none';
+}
+</script>
 </body>
 </html>
