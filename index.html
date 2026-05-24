@@ -834,6 +834,13 @@ document.querySelectorAll('.card-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.getElementById('order').scrollIntoView({behavior:'smooth'});
   });
+});document.querySelector('select[name="type"]').addEventListener('change', function() {
+  const extra = document.getElementById('designerExtra');
+  if (this.value === 'Дизайнераар бүртгүүлэх') {
+    extra.style.display = 'block';
+  } else {
+    extra.style.display = 'none';
+  }
 });
 document.getElementById('orderForm').addEventListener('submit', async function(e) {
   e.preventDefault();
