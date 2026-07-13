@@ -206,7 +206,7 @@
   .card-cta:hover{ background:var(--leather); }
 
   /* ---------- Order ---------- */
-  .order{ padding:90px 0; background:var(--ink); color:var(--felt); }
+  .order{ padding:56px 0; background:var(--ink); color:var(--felt); }
   .order .section-head h2, .order .section-head p{ color:var(--felt); }
   .order .section-head p{ color:rgba(241,231,208,0.72); }
   .order-grid{ display:grid; grid-template-columns:1fr 0.9fr; gap:52px; }
@@ -300,39 +300,41 @@
     .nav-cta{ display:none; }
   }
   @media (max-width: 620px){
-      .grid-products{ grid-template-columns:1fr; }
-      .field-row{ grid-template-columns:1fr; }
+    .grid-products{ grid-template-columns:1fr; }
+    .field-row{ grid-template-columns:1fr; }
 
-      .hero{ padding:60px 0 40px; }
-      .hero h1{ font-size:2rem; }
-      .hero p.lead{ font-size:0.95rem; }
-      .eyebrow{ font-size:0.68rem; }
-      .hero-badge{ width:88px; height:88px; font-size:0.58rem; }
+    .hero{ padding:60px 0 40px; }
+    .hero h1{ font-size:2rem; }
+    .hero p.lead{ font-size:0.95rem; }
+    .eyebrow{ font-size:0.68rem; }
+    .hero-badge{ width:88px; height:88px; font-size:0.58rem; }
 
-      .about h2, .section-head h2, .contact h2{ font-size:1.5rem; }
-      .about p{ font-size:0.92rem; }
-      .stat b{ font-size:1.3rem; }
-      .stat span{ font-size:0.72rem; }
+    .about h2, .section-head h2, .contact h2{ font-size:1.5rem; }
+    .about p{ font-size:0.92rem; }
+    .stat b{ font-size:1.3rem; }
+    .stat span{ font-size:0.72rem; }
 
-      .card-body h3{ font-size:1.05rem; }
-      .card-body p{ font-size:0.82rem; }
-      .price{ font-size:0.92rem; }
+    .card-body h3{ font-size:1.05rem; }
+    .card-body p{ font-size:0.82rem; }
+    .price{ font-size:0.92rem; }
 
-      .btn{ padding:12px 20px; font-size:0.88rem;.about, .products, .order, .payment, .contact{ padding:44px 0; }
-      .hero{ padding:44px 0 30px; }
-      .section-head{ margin-bottom:24px; }
-      .about-grid, .order-grid, .contact-grid{ gap:26px; }
-      .stat-row{ gap:20px; margin-top:18px; }
-      .grid-products{ gap:16px; }
-      .card-body{ padding:16px 16px 18px; gap:6px; }
-      .btn-row{ gap:10px; }
-      .contact-links{ gap:10px; }
-      .contact-link{ padding:12px 14px; }
-      .pay-grid{ gap:14px; }
-      .pay-card{ padding:18px; }
-      form{ gap:12px; }
-      .field{ gap:5px; } }
-    }
+    .btn{ padding:12px 20px; font-size:0.88rem; }
+
+    .about, .products, .order, .payment, .contact{ padding:44px 0; }
+    .hero{ padding:44px 0 30px; }
+    .section-head{ margin-bottom:24px; }
+    .about-grid, .order-grid, .contact-grid{ gap:26px; }
+    .stat-row{ gap:20px; margin-top:18px; }
+    .grid-products{ gap:16px; }
+    .card-body{ padding:16px 16px 18px; gap:6px; }
+    .btn-row{ gap:10px; }
+    .contact-links{ gap:10px; }
+    .contact-link{ padding:12px 14px; }
+    .pay-grid{ gap:14px; }
+    .pay-card{ padding:18px; }
+    form{ gap:12px; }
+    .field{ gap:5px; }
+  }
 
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
@@ -375,8 +377,9 @@
   </svg>
   <div class="wrap hero-inner">
     <div>
-      <div class="eyebrow">Хэнтий аймаг</div>
-      <h1> <em>Khiimori</em><br>гутал, эмээл</h1>
+      <div class="eyebrow">Гар бүтээл · Улаанбаатар</div>
+      <h1>Өвөг дээдсийн <em>урлагийг</em><br>өнөөдрийн гутал, эмээлд</h1>
+      <p class="lead">ULAANART нь монгол ард түмний уламжлалт эсгий, арьс шир боловсруулах урлагаар гутал, эмээлийг гараар хийж, захиалгаар түгээдэг гар урлалын студи юм.</p>
       <div class="btn-row">
         <a href="#order" class="btn btn-primary">Захиалга өгөх →</a>
         <a href="#products" class="btn btn-outline">Бүтээгдэхүүн үзэх</a>
@@ -385,7 +388,7 @@
     <div class="hero-art">
       <img src="poster1.png" alt="ULAANART — Монгол гутал, эмээл" style="width:100%; border-radius:6px; box-shadow: var(--shadow); object-fit:cover;">
       <div class="hero-badge">
-        <span>100% <br>Hand made</span>
+        <span>100% ЖИНХЭНЭ АРЬС ШИР<br>ГАРААР УЯДАГ</span>
       </div>
     </div>
   </div>
@@ -397,11 +400,15 @@
 <section class="about" id="about">
   <div class="wrap about-grid">
     <div>
-      <h2>Монгол морины нуруунд тохирсон чанартай эмээл<br>гараар урлан бүтээдэг.</h2>
+      <h2>Материал биш,<br>уламжлал юм</h2>
     </div>
     <div>
-      <p></p>
+      <p>Бид эмээл, гутлаа зөвхөн харагдах байдлаар нь бус, буриад, халх, ойрд ард түмний уламжилж ирсэн оёдол, хээ угалзаар нь хийдэг. Ноён шир, ямаан арьс, эсгий, мөнгөн чимэглэлийг гараар нэгтгэн, өвгөдийн уяа оёдлыг өнөөгийн хэрэглээнд тохируулдаг.</p>
+      <p>Захиалга бүрийг ганцаарчилсан хэмжээ, өнгө, чимэглэлээр хийж, амьдралын хэв маягт тань нийцүүлдэг.</p>
       <div class="stat-row">
+        <div class="stat"><b>14</b><span>жилийн туршлага</span></div>
+        <div class="stat"><b>800+</b><span>захиалга биелүүлсэн</span></div>
+        <div class="stat"><b>100%</b><span>гараар хийсэн</span></div>
       </div>
     </div>
   </div>
@@ -428,11 +435,11 @@
       <div class="card">
         <div class="card-art">
           <span class="card-tag">Гутал</span>
-          <img src="Unknown-3.jpg" alt="Буриад гутал" style="width:100%; height:100%; object-fit:cover;">
+          <svg viewBox="0 0 200 160"><path d="M40 140 C30 110 35 70 55 45 C65 32 90 28 100 40 C115 30 140 35 142 55 C144 75 130 100 128 118 C127 128 128 138 128 148 L128 152 L40 152 Z" fill="#6B4226" stroke="#4A2C1B" stroke-width="3"/><path d="M40 152 Q84 164 128 152" fill="none" stroke="#4A2C1B" stroke-width="3"/><path d="M55 45 C65 32 90 28 100 40" fill="none" stroke="#C08A2E" stroke-width="2" stroke-dasharray="3 4"/></svg>
         </div>
         <div class="card-body">
-          <h3>Буриад гутал</h3>
-          <p>гар оёдолтой уламжлалт эрэгтэй гутал.</p>
+          <h3>Хантааз гутал — Уламжлалт</h3>
+          <p>Ноён ширэн ул, дэгээ хамартай, гар оёдолтой уламжлалт эрэгтэй гутал.</p>
           <div class="card-price-row">
             <span class="price">₮285,000</span>
             <span class="mono" style="font-size:0.72rem;color:rgba(27,42,65,0.5)">36–46 хэмжээ</span>
@@ -445,11 +452,11 @@
       <div class="card">
         <div class="card-art">
           <span class="card-tag">Гутал</span>
-          <img src="Unknown-3.jpg" alt="Буриад гутал" style="width:100%; height:100%; object-fit:cover;">
+          <svg viewBox="0 0 200 160"><path d="M42 140 C32 108 38 66 58 42 C70 28 96 26 104 40 C118 28 144 34 146 56 C148 76 132 100 130 118 C129 128 130 138 130 148 L130 152 L42 152 Z" fill="#8C2F2F" stroke="#4A2C1B" stroke-width="3"/><path d="M42 152 Q86 164 130 152" fill="none" stroke="#4A2C1B" stroke-width="3"/><path d="M58 42 C70 28 96 26 104 40" fill="none" stroke="#C08A2E" stroke-width="2" stroke-dasharray="3 4"/></svg>
         </div>
         <div class="card-body">
           <h3>Эмэгтэй гутал — Хээтэй</h3>
-          <p>Хүүхдийн Монгол гутал.</p>
+          <p>Гар хатгамал хээтэй, зөөлөн ноён ширэн эмэгтэй загварын гутал.</p>
           <div class="card-price-row">
             <span class="price">₮265,000</span>
             <span class="mono" style="font-size:0.72rem;color:rgba(27,42,65,0.5)">34–41 хэмжээ</span>
@@ -462,16 +469,67 @@
       <div class="card">
         <div class="card-art">
           <span class="card-tag">Эмээл</span>
-         <img src="Unknown-3.jpg" alt="Буриад гутал" style="width:100%; height:100%; object-fit:cover;">
+          <svg viewBox="0 0 200 160"><path d="M25 100 C25 75 50 60 100 60 C150 60 175 75 175 100 C175 118 155 122 140 118 C120 112 80 112 60 118 C45 122 25 118 25 100 Z" fill="#6B4226" stroke="#4A2C1B" stroke-width="3"/><ellipse cx="100" cy="75" rx="34" ry="12" fill="none" stroke="#C08A2E" stroke-width="2.5"/><circle cx="100" cy="75" r="5" fill="#C08A2E"/></svg>
         </div>
         <div class="card-body">
-          <h3>эмээл</h3>
-          <p>эмээл.</p>
+          <h3>Тахилгат эмээл — Мөнгөн чимэглэлтэй</h3>
+          <p>Модон сурин дээр арьс шир татаж, мөнгөн болон гууль чимэглэл хийсэн язгуур эмээл.</p>
           <div class="card-price-row">
             <span class="price">₮1,250,000</span>
             <span class="mono" style="font-size:0.72rem;color:rgba(27,42,65,0.5)">том/дунд</span>
           </div>
           <a href="#order" class="card-cta" onclick="presetProduct('Тахилгат эмээл — Мөнгөн чимэглэлтэй')">Захиалах</a>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="card">
+        <div class="card-art">
+          <span class="card-tag">Эмээл</span>
+          <svg viewBox="0 0 200 160"><path d="M25 100 C25 75 50 60 100 60 C150 60 175 75 175 100 C175 118 155 122 140 118 C120 112 80 112 60 118 C45 122 25 118 25 100 Z" fill="#4A2C1B" stroke="#1B2A41" stroke-width="3"/><ellipse cx="100" cy="75" rx="34" ry="12" fill="none" stroke="#8C2F2F" stroke-width="2.5"/></svg>
+        </div>
+        <div class="card-body">
+          <h3>Өдөр тутмын эмээл — Энгийн</h3>
+          <p>Малчин өрхөд зориулсан бат бөх, энгийн засалтай өдөр тутмын эмээл.</p>
+          <div class="card-price-row">
+            <span class="price">₮680,000</span>
+            <span class="mono" style="font-size:0.72rem;color:rgba(27,42,65,0.5)">дунд хэмжээ</span>
+          </div>
+          <a href="#order" class="card-cta" onclick="presetProduct('Өдөр тутмын эмээл — Энгийн')">Захиалах</a>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="card">
+        <div class="card-art">
+          <span class="card-tag">Гутал</span>
+          <svg viewBox="0 0 200 160"><path d="M38 138 C28 106 34 64 54 40 C66 26 92 24 100 38 C114 26 140 32 142 54 C144 74 128 98 126 116 C125 126 126 136 126 146 L126 150 L38 150 Z" fill="#C08A2E" stroke="#4A2C1B" stroke-width="3"/><path d="M38 150 Q82 162 126 150" fill="none" stroke="#4A2C1B" stroke-width="3"/></svg>
+        </div>
+        <div class="card-body">
+          <h3>Хүүхдийн гутал</h3>
+          <p>Хөнгөн, зөөлөн ноён ширэн хүүхдийн уламжлалт гутал.</p>
+          <div class="card-price-row">
+            <span class="price">₮145,000</span>
+            <span class="mono" style="font-size:0.72rem;color:rgba(27,42,65,0.5)">26–34 хэмжээ</span>
+          </div>
+          <a href="#order" class="card-cta" onclick="presetProduct('Хүүхдийн гутал')">Захиалах</a>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="card">
+        <div class="card-art">
+          <span class="card-tag">Эмээл</span>
+          <svg viewBox="0 0 200 160"><path d="M25 100 C25 75 50 60 100 60 C150 60 175 75 175 100 C175 118 155 122 140 118 C120 112 80 112 60 118 C45 122 25 118 25 100 Z" fill="#8C2F2F" stroke="#4A2C1B" stroke-width="3"/><ellipse cx="100" cy="75" rx="34" ry="12" fill="none" stroke="#F1E7D0" stroke-width="2.5"/><circle cx="100" cy="75" r="5" fill="#F1E7D0"/></svg>
+        </div>
+        <div class="card-body">
+          <h3>Баярын эмээл — Улаан</h3>
+          <p>Наадам, ёслолын үеэр зориулсан улаан арьс шир, гоёмсог чимэглэлтэй эмээл.</p>
+          <div class="card-price-row">
+            <span class="price">₮980,000</span>
+            <span class="mono" style="font-size:0.72rem;color:rgba(27,42,65,0.5)">том хэмжээ</span>
+          </div>
+          <a href="#order" class="card-cta" onclick="presetProduct('Баярын эмээл — Улаан')">Захиалах</a>
         </div>
       </div>
 
@@ -485,7 +543,7 @@
     <div class="section-head">
       <div>
         <h2>Захиалга өгөх</h2>
-        <p>Мэдээллээ бөглөөд илгээхэд бид 24 цагийн дотор утсаар холбогдож, хэмжээ, үнэ тохирно.</p>
+        <p>Мэдээллээ бөглөөд илгээхэд бид 24 цагийн дотор утсаар холбогдож, хэмжээ, хүргэлтийг тохирно.</p>
       </div>
     </div>
     <div class="order-grid">
@@ -502,27 +560,16 @@
         </div>
 
         <div class="field">
-          <label for="faddr">Хүргэлтийн хаяг</label>
-          <input id="faddr" name="faddr" type="text" placeholder="Хот / дүүрэг / хороо, гудамж">
-        </div>
-
-        <div class="field-row">
-          <div class="field">
-            <label for="fproduct">Бүтээгдэхүүн</label>
-            <select id="fproduct" name="fproduct" required>
-              <option value="">Сонгох...</option>
-              <option>гутал</option>
-              <option>Эмэгтэй гутал</option>
-              <option>Хүүхдийн гутал</option>
-              <option>эмээл</option>
-              <option>Өдөр тутмын эмээл — Энгийн</option>
-              <option>эмээл</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="fsize">Хэмжээ</label>
-            <input id="fsize" name="fsize" type="text" placeholder="жиш: 42 хэмжээ">
-          </div>
+          <label for="fproduct">Бүтээгдэхүүн</label>
+          <select id="fproduct" name="fproduct" required>
+            <option value="">Сонгох...</option>
+            <option>Хантааз гутал — Уламжлалт</option>
+            <option>Эмэгтэй гутал — Хээтэй</option>
+            <option>Хүүхдийн гутал</option>
+            <option>Тахилгат эмээл — Мөнгөн чимэглэлтэй</option>
+            <option>Өдөр тутмын эмээл — Энгийн</option>
+            <option>Баярын эмээл — Улаан</option>
+          </select>
         </div>
 
         <div class="field-row">
@@ -556,15 +603,15 @@
             <li>1. Захиалгын форм бөглөнө</li>
             <li>2. Бид утсаар холбогдож хэмжээ, дизайныг тохирно</li>
             <li>3. Урьдчилгаа төлбөр төлнө (50%)</li>
-            <li>4. </li>
-            <li>5. орон нутагт шуудангаар илгээнэ</li>
+            <li>4. 7–14 хоногт гараар хийж дуусгана</li>
+            <li>5. Хот дотор хүргэнэ / орон нутагт шуудангаар илгээнэ</li>
           </ul>
         </div>
         <div class="info-card">
           <h4>Яаралтай захиалга?</h4>
           <p>Формыг ашиглахгүйгээр шууд утсаар эсвэл Messenger-ээр холбогдож болно.</p>
           <div class="btn-row" style="margin-top:14px;">
-            <a href="tel:+97696033183" class="btn btn-gold" style="padding:10px 18px;font-size:0.85rem;">Залгах</a>
+            <a href="tel:+97699112233" class="btn btn-gold" style="padding:10px 18px;font-size:0.85rem;">Залгах</a>
             <a href="https://m.me/ulaanart.mn" target="_blank" rel="noopener" class="btn btn-outline" style="padding:10px 18px;font-size:0.85rem;border-color:var(--felt);color:var(--felt);">Messenger</a>
           </div>
         </div>
@@ -599,6 +646,8 @@
       </div>
       <div class="pay-card">
         <svg class="pay-icon" viewBox="0 0 48 48" fill="none" stroke="#6B4226" stroke-width="2"><path d="M6 12 L24 24 L42 12" /><rect x="6" y="8" width="36" height="30" rx="3"/></svg>
+        <h3>Бэлнээр (хүргэлтийн үед)</h3>
+        <p>Улаанбаатар хотын дотор хүргэлтийн ажилтанд бэлнээр төлөх боломжтой.</p>
         <span class="mono">Хүргэлтийн хураамж тусдаа тооцно</span>
       </div>
     </div>
@@ -614,7 +663,7 @@
       <div class="contact-links">
         <a class="contact-link" href="tel:+97699112233">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#1B2A41" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>+976 96033183 <small>Утсаар холбогдох</small></span>
+          <span>+976 9911-2233<small>Утсаар холбогдох</small></span>
         </a>
         <a class="contact-link" href="https://m.me/ulaanart.mn" target="_blank" rel="noopener">
           <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#1B2A41" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -648,7 +697,7 @@
         <a href="#contact">Холбоо барих</a>
       </div>
     </div>
-    <p class="copyright">© 2026 ULAANART. Бүх эрх хуулиар хамгаалагдсан. Гар бүтээлийн монгол гутал, эмээл — Хэнтий аймаг.</p>
+    <p class="copyright">© 2026 ULAANART. Бүх эрх хуулиар хамгаалагдсан. Гар бүтээлийн монгол гутал, эмээл — Улаанбаатар.</p>
   </div>
 </footer>
 
@@ -678,9 +727,7 @@
     const data = new FormData(form);
     const name = data.get('fname') || '';
     const phone = data.get('fphone') || '';
-    const addr = data.get('faddr') || '';
     const product = data.get('fproduct') || '';
-    const size = data.get('fsize') || '';
     const qty = data.get('fqty') || '1';
     const pay = data.get('fpay') || '';
     const note = data.get('fnote') || '';
@@ -688,15 +735,13 @@
     const body = [
       'Захиалагч: ' + name,
       'Утас: ' + phone,
-      'Хаяг: ' + addr,
       'Бүтээгдэхүүн: ' + product,
-      'Хэмжээ: ' + size,
       'Тоо ширхэг: ' + qty,
       'Төлбөрийн хэлбэр: ' + pay,
       'Тэмдэглэл: ' + note
     ].join('%0D%0A');
 
-    const mailto = 'mailto:erdennem@gmail.com?subject=' + encodeURIComponent('Шинэ захиалга — ' + name) + '&body=' + body;
+    const mailto = 'mailto:order@ulaanart.mn?subject=' + encodeURIComponent('Шинэ захиалга — ' + name) + '&body=' + body;
 
     window.location.href = mailto;
 
