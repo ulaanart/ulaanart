@@ -113,6 +113,7 @@
     text-transform:uppercase; color:var(--red); margin-bottom:22px;
   }
   .eyebrow::before{ content:""; width:26px; height:1px; background:var(--red); }
+  .eyebrow::after{ content:""; width:26px; height:1px; background:var(--red); }
   .hero h1{
     font-size:clamp(2.5rem, 4.2vw, 4rem);
     color:var(--leather-dark);
@@ -148,7 +149,7 @@
   }
 
   /* ---------- About ---------- */
- .about{ padding:40px 0; background:var(--paper); }
+.about{ padding:40px 0 24px; background:var(--paper); }
   .about-grid{
     display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start;
   }
@@ -161,7 +162,7 @@
   /* ---------- Products ---------- */
   .products{ padding:90px 0; background:var(--felt); }
   .section-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; gap:20px; flex-wrap:wrap; }
-  .section-head h2{ font-size:2.2rem; color:var(--leather-dark); }
+  .section-head h2{ font-size:2.2rem; color:var(--leather-dark); margin-bottom:14px; }
   .section-head p{ max-width:42ch; color:rgba(27,42,65,0.72); line-height:1.6; margin:10px 0 0; }
 
   .cat-tabs{ display:flex; gap:10px; margin-bottom:36px; }
