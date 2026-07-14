@@ -151,9 +151,10 @@
 
   /* ---------- About ---------- */
 .about{ padding:40px 0 24px; background:var(--paper); }
-  .about-grid{
-    display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start;
-  }
+ .about-grid{
+  display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start;
+}
+.about-grid h2{ text-align:center; }
   .about h2{ font-size:2.1rem; color:var(--leather-dark); margin-bottom:20px; }
   .about p{ line-height:1.75; color:rgba(27,42,65,0.85); margin:0 0 16px; }
   .stat-row{ display:flex; gap:36px; margin-top:28px; flex-wrap:wrap; }
@@ -162,7 +163,7 @@
 
   /* ---------- Products ---------- */
   .products{ padding:90px 0; background:var(--felt); }
-  .section-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; gap:20px; flex-wrap:wrap; }
+ .section-head{ display:flex; flex-direction:column; align-items:center; text-align:center; margin-bottom:48px; gap:16px; }
   .section-head h2{ font-size:2.2rem; color:var(--leather-dark); margin-bottom:14px; }
   .section-head p{ max-width:42ch; color:rgba(27,42,65,0.72); line-height:1.6; margin:10px 0 0; }
 
@@ -250,7 +251,7 @@
   /* ---------- Contact ---------- */
   .contact{ padding:90px 0 100px; background:var(--felt); }
   .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
-  .contact h2{ font-size:2.1rem; color:var(--leather-dark); margin-bottom:18px; }
+ .contact h2{ font-size:2.1rem; color:var(--leather-dark); margin-bottom:18px; text-align:center; }
   .contact p{ line-height:1.7; color:rgba(27,42,65,0.8); margin-bottom:26px; max-width:44ch; }
   .contact-links{ display:flex; flex-direction:column; gap:16px; }
   .contact-link{
