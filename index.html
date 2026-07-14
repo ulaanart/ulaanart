@@ -23,15 +23,15 @@
     --radius: 4px;
   }
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  *{box-sizing:border-box; min-width:0;}
+  html{scroll-behavior:smooth; overflow-x:hidden;}
   body{
     margin:0;
     background:var(--felt);
     color:var(--ink);
     font-family:'Manrope', sans-serif;
     -webkit-font-smoothing:antialiased;
-     overflow-x:hidden;
+    overflow-x:hidden;
   }
   h1,h2,h3,.display{
     font-family:'Yeseva One', serif;
@@ -46,13 +46,8 @@
   .wrap{ max-width:1180px; margin:0 auto; padding:0 28px; }
   section{ position:relative; }
 
-  /* ---------- Stitch divider (signature element) ---------- */
-  .stitch{
-    width:100%; height:22px;
-    background-repeat:repeat-x;
-    background-size:26px 22px;
-    opacity:0.55;
-  }
+  /* ---------- Stitch divider ---------- */
+  .stitch{ width:100%; height:22px; background-repeat:repeat-x; background-size:26px 22px; opacity:0.55; }
   .stitch.dark{ opacity:0.28; }
 
   /* ---------- Header ---------- */
@@ -62,213 +57,101 @@
     backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
   }
-  .nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:18px 0;
-  }
-  .logo{
-    font-family:'Yeseva One', serif;
-    font-size:1.5rem;
-    letter-spacing:0.03em;
-    color:var(--leather-dark);
-    text-decoration:none;
-  }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+  .logo{ font-family:'Yeseva One', serif; font-size:1.5rem; letter-spacing:0.03em; color:var(--leather-dark); text-decoration:none; }
   .logo span{ color:var(--red); }
   nav.links{ display:flex; gap:34px; }
-  nav.links a{
-    text-decoration:none; font-weight:600; font-size:0.94rem;
-    color:var(--ink); position:relative; padding:4px 0;
-  }
-  nav.links a::after{
-    content:""; position:absolute; left:0; bottom:-2px; height:2px; width:0;
-    background:var(--red); transition:width .25s ease;
-  }
+  nav.links a{ text-decoration:none; font-weight:600; font-size:0.94rem; color:var(--ink); position:relative; padding:4px 0; }
+  nav.links a::after{ content:""; position:absolute; left:0; bottom:-2px; height:2px; width:0; background:var(--red); transition:width .25s ease; }
   nav.links a:hover::after{ width:100%; }
-  .nav-cta{
-    background:var(--leather); color:var(--paper);
-    padding:10px 20px; border-radius:var(--radius);
-    text-decoration:none; font-weight:700; font-size:0.9rem;
-    box-shadow:var(--shadow);
-    white-space:nowrap;
-  }
+  .nav-cta{ background:var(--leather); color:var(--paper); padding:10px 20px; border-radius:var(--radius); text-decoration:none; font-weight:700; font-size:0.9rem; box-shadow:var(--shadow); white-space:nowrap; }
   .burger{ display:none; background:none; border:none; cursor:pointer; }
 
   /* ---------- Hero ---------- */
-  .hero{
-    background:
-      radial-gradient(circle at 85% 20%, rgba(192,138,46,0.18), transparent 45%),
-      var(--felt);
-    overflow:hidden;
-    padding:88px 0 70px;
-  }
-  .hero-pattern{
-    position:absolute; inset:0; z-index:0; opacity:0.09; pointer-events:none;
-  }
-  .hero-inner{
-    position:relative; z-index:1;
-    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
-  }
-  .eyebrow{
-    display:inline-flex; align-items:center; gap:10px;
-    font-family:'JetBrains Mono', monospace; font-size:0.78rem; letter-spacing:0.12em;
-    text-transform:uppercase; color:var(--red); margin-bottom:22px;
-  }
+  .hero{ background: radial-gradient(circle at 85% 20%, rgba(192,138,46,0.18), transparent 45%), var(--felt); overflow:hidden; padding:88px 0 70px; }
+  .hero-pattern{ position:absolute; inset:0; z-index:0; opacity:0.09; pointer-events:none; }
+  .hero-inner{ position:relative; z-index:1; display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:10px; font-family:'JetBrains Mono', monospace; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--red); margin-bottom:22px; }
   .eyebrow::before{ content:""; width:26px; height:1px; background:var(--red); }
   .eyebrow::after{ content:""; width:26px; height:1px; background:var(--red); }
-  .hero h1{
-    font-size:clamp(2.5rem, 4.2vw, 4rem);
-    color:var(--leather-dark);
-    margin-bottom:22px;
-  }
+  .hero h1{ font-size:clamp(2.5rem, 4.2vw, 4rem); color:var(--leather-dark); margin-bottom:22px; }
   .hero h1 em{ font-style:normal; color:var(--red); }
-  .hero p.lead{
-    font-size:1.12rem; line-height:1.65; color:rgba(27,42,65,0.82);
-    max-width:46ch; margin-bottom:34px;
-  }
+  .hero p.lead{ font-size:1.12rem; line-height:1.65; color:rgba(27,42,65,0.82); max-width:46ch; margin-bottom:34px; }
   .btn-row{ display:flex; gap:16px; flex-wrap:wrap; }
-  .btn{
-    display:inline-flex; align-items:center; gap:10px;
-    padding:14px 26px; border-radius:var(--radius);
-    text-decoration:none; font-weight:700; font-size:0.95rem;
-    border:1.5px solid transparent; cursor:pointer;
-    transition:transform .18s ease, box-shadow .18s ease;
-  }
+  .btn{ display:inline-flex; align-items:center; gap:10px; padding:14px 26px; border-radius:var(--radius); text-decoration:none; font-weight:700; font-size:0.95rem; border:1.5px solid transparent; cursor:pointer; transition:transform .18s ease, box-shadow .18s ease; }
   .btn:hover{ transform:translateY(-2px); }
   .btn-primary{ background:var(--red); color:var(--paper); box-shadow:0 14px 26px -12px rgba(140,47,47,0.55); }
   .btn-outline{ border-color:var(--ink); color:var(--ink); }
   .btn-gold{ background:var(--ochre); color:var(--leather-dark); }
-
-  .hero-art{
-    position:relative; display:flex; align-items:center; justify-content:center;
-  }
-  .hero-badge{
-    position:absolute; bottom:-18px; left:-18px;
-    background:var(--paper); border:1px solid var(--line); border-radius:50%;
-    width:118px; height:118px; display:flex; align-items:center; justify-content:center;
-    text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.68rem;
-    line-height:1.3; box-shadow:var(--shadow); padding:10px;
-  }
+  .hero-art{ position:relative; display:flex; align-items:center; justify-content:center; }
+  .hero-badge{ position:absolute; bottom:-18px; left:-18px; background:var(--paper); border:1px solid var(--line); border-radius:50%; width:118px; height:118px; display:flex; align-items:center; justify-content:center; text-align:center; font-family:'JetBrains Mono',monospace; font-size:0.68rem; line-height:1.3; box-shadow:var(--shadow); padding:10px; }
 
   /* ---------- About ---------- */
-.about{ padding:40px 0 24px; background:var(--paper); }
- .about-grid{
-  display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:start;
-}
-.about-grid h2{ text-align:center; }
-  .about h2{ font-size:2.1rem; color:var(--leather-dark); margin-bottom:20px; }
-  .about p{ line-height:1.75; color:rgba(27,42,65,0.85); margin:0 0 16px; }
-  .stat-row{ display:flex; gap:36px; margin-top:28px; flex-wrap:wrap; }
-  .stat b{ display:block; font-family:'Yeseva One',serif; font-size:1.8rem; color:var(--red); }
-  .stat span{ font-size:0.82rem; color:rgba(27,42,65,0.65); }
+  .about{ padding:40px 0 24px; background:var(--paper); }
+  .about .wrap{ text-align:center; }
+  .about h2{ font-size:2.1rem; color:var(--leather-dark); max-width:26ch; margin:0 auto; }
 
   /* ---------- Products ---------- */
-  .products{ padding:90px 0; background:var(--felt); }
- .section-head{ display:flex; flex-direction:column; align-items:center; text-align:center; margin-bottom:48px; gap:16px; }
-  .section-head h2{ font-size:2.2rem; color:var(--leather-dark); margin-bottom:14px; }
-  .section-head p{ max-width:42ch; color:rgba(27,42,65,0.72); line-height:1.6; margin:10px 0 0; }
-
-  .cat-tabs{ display:flex; gap:10px; margin-bottom:36px; }
-  .cat-tab{
-    font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase;
-    letter-spacing:0.06em; padding:8px 16px; border:1px solid var(--ink);
-    border-radius:20px; background:transparent; cursor:default;
-  }
+  .products{ padding:56px 0 90px; background:var(--felt); }
+  .section-head{ display:flex; flex-direction:column; align-items:center; text-align:center; margin-bottom:36px; gap:14px; }
+  .section-head h2{ font-size:2.2rem; color:var(--leather-dark); }
+  .section-head p{ max-width:42ch; color:rgba(27,42,65,0.72); line-height:1.6; margin:0; }
+  .cat-tabs{ display:flex; gap:10px; }
+  .cat-tab{ font-family:'JetBrains Mono',monospace; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; padding:8px 16px; border:1px solid var(--ink); border-radius:20px; background:transparent; cursor:default; }
   .cat-tab.active{ background:var(--ink); color:var(--felt); }
-
-  .grid-products{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;
-  }
-  .card{
-    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
-    overflow:hidden; display:flex; flex-direction:column;
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
+  .grid-products{ display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; }
+  .card{ background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; display:flex; flex-direction:column; transition:transform .2s ease, box-shadow .2s ease; }
   .card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
-  .card-art{
-    aspect-ratio:4/3; background:linear-gradient(160deg, var(--felt-2), var(--felt));
-    display:flex; align-items:center; justify-content:center; position:relative;
-    border-bottom:1px solid var(--line);
-  }
+  .card-art{ aspect-ratio:4/3; background:linear-gradient(160deg, var(--felt-2), var(--felt)); display:flex; align-items:center; justify-content:center; position:relative; border-bottom:1px solid var(--line); overflow:hidden; }
   .card-art svg{ width:62%; height:62%; }
-  .card-tag{
-    position:absolute; top:12px; left:12px; background:var(--leather-dark); color:var(--felt);
-    font-family:'JetBrains Mono',monospace; font-size:0.66rem; padding:4px 10px; border-radius:12px;
-    text-transform:uppercase; letter-spacing:0.05em;
-  }
+  .card-art img{ width:100%; height:100%; object-fit:cover; }
+  .card-tag{ position:absolute; top:12px; left:12px; background:var(--leather-dark); color:var(--felt); font-family:'JetBrains Mono',monospace; font-size:0.66rem; padding:4px 10px; border-radius:12px; text-transform:uppercase; letter-spacing:0.05em; }
   .card-body{ padding:22px 22px 24px; display:flex; flex-direction:column; gap:10px; flex:1; }
   .card-body h3{ font-size:1.25rem; color:var(--leather-dark); }
   .card-body p{ font-size:0.9rem; line-height:1.55; color:rgba(27,42,65,0.72); margin:0; flex:1; }
   .card-price-row{ display:flex; align-items:center; justify-content:space-between; margin-top:6px; }
   .price{ font-family:'JetBrains Mono',monospace; font-weight:600; font-size:1.05rem; color:var(--red); }
-  .card-cta{
-    display:inline-block; text-align:center; margin-top:4px;
-    background:var(--ink); color:var(--felt); text-decoration:none;
-    padding:11px; border-radius:var(--radius); font-weight:700; font-size:0.88rem;
-    transition:background .2s ease;
-  }
+  .card-cta{ display:inline-block; text-align:center; margin-top:4px; background:var(--ink); color:var(--felt); text-decoration:none; padding:11px; border-radius:var(--radius); font-weight:700; font-size:0.88rem; transition:background .2s ease; }
   .card-cta:hover{ background:var(--leather); }
 
   /* ---------- Order ---------- */
-  .order{ padding:90px 0; background:var(--ink); color:var(--felt); }
+  .order{ padding:56px 0; background:var(--ink); color:var(--felt); }
   .order .section-head h2, .order .section-head p{ color:var(--felt); }
   .order .section-head p{ color:rgba(241,231,208,0.72); }
   .order-grid{ display:grid; grid-template-columns:1fr 0.9fr; gap:52px; }
   form{ display:flex; flex-direction:column; gap:18px; }
   .field{ display:flex; flex-direction:column; gap:8px; }
   .field label{ font-size:0.82rem; font-family:'JetBrains Mono',monospace; text-transform:uppercase; letter-spacing:0.05em; color:var(--ochre); }
-  .field input, .field select, .field textarea{
-    background:rgba(241,231,208,0.06); border:1px solid rgba(241,231,208,0.28);
-    border-radius:var(--radius); padding:13px 14px; color:var(--felt); font-family:'Manrope',sans-serif;
-    font-size:0.95rem;
-  }
+  .field input, .field select, .field textarea{ background:rgba(241,231,208,0.06); border:1px solid rgba(241,231,208,0.28); border-radius:var(--radius); padding:13px 14px; color:var(--felt); font-family:'Manrope',sans-serif; font-size:0.95rem; width:100%; }
   .field input::placeholder, .field textarea::placeholder{ color:rgba(241,231,208,0.4); }
   .field-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
   form .btn-primary{ margin-top:6px; justify-content:center; }
   .form-note{ font-size:0.8rem; color:rgba(241,231,208,0.55); line-height:1.5; }
-
   .order-side{ display:flex; flex-direction:column; gap:20px; }
-  .info-card{
-    background:rgba(241,231,208,0.06); border:1px solid rgba(241,231,208,0.2);
-    border-radius:var(--radius); padding:22px;
-  }
-  .info-card h4{
-    font-family:'Yeseva One',serif; font-weight:400; font-size:1.1rem; margin:0 0 10px; color:var(--ochre);
-  }
+  .info-card{ background:rgba(241,231,208,0.06); border:1px solid rgba(241,231,208,0.2); border-radius:var(--radius); padding:22px; }
+  .info-card h4{ font-family:'Yeseva One',serif; font-weight:400; font-size:1.1rem; margin:0 0 10px; color:var(--ochre); }
   .info-card p, .info-card li{ font-size:0.9rem; line-height:1.6; color:rgba(241,231,208,0.82); }
   .info-card ul{ margin:0; padding-left:18px; }
 
   /* ---------- Payment ---------- */
-  .payment{ padding:90px 0; background:var(--paper); }
+  .payment{ padding:56px 0 90px; background:var(--paper); }
   .pay-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-  .pay-card{
-    border:1px solid var(--line); border-radius:var(--radius); padding:26px; background:var(--felt);
-  }
+  .pay-card{ border:1px solid var(--line); border-radius:var(--radius); padding:26px; background:var(--felt); min-width:0; }
   .pay-card .pay-icon{ width:44px; height:44px; margin-bottom:16px; }
   .pay-card h3{ font-size:1.1rem; margin-bottom:10px; color:var(--leather-dark); }
   .pay-card p{ font-size:0.88rem; line-height:1.6; color:rgba(27,42,65,0.75); margin:0; }
   .pay-card .mono{ display:block; margin-top:10px; font-size:0.85rem; color:var(--red); }
 
   /* ---------- Contact ---------- */
-  .contact{ padding:90px 0 100px; background:var(--felt); }
-  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
- .contact h2{ font-size:2.1rem; color:var(--leather-dark); margin-bottom:18px; text-align:center; }
-  .contact p{ line-height:1.7; color:rgba(27,42,65,0.8); margin-bottom:26px; max-width:44ch; }
-  .contact-links{ display:flex; flex-direction:column; gap:16px; }
-  .contact-link{
-    display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--ink);
-    font-weight:700; padding:16px 18px; background:var(--paper); border:1px solid var(--line);
-    border-radius:var(--radius); transition:border-color .2s ease, transform .2s ease;
-  }
+  .contact{ padding:56px 0 90px; background:var(--felt); }
+  .contact .wrap{ max-width:640px; text-align:center; }
+  .contact h2{ font-size:2.1rem; color:var(--leather-dark); margin-bottom:18px; }
+  .contact p{ line-height:1.7; color:rgba(27,42,65,0.8); margin:0 auto 26px; max-width:44ch; }
+  .contact-links{ display:flex; flex-direction:column; gap:16px; text-align:left; }
+  .contact-link{ display:flex; align-items:center; gap:14px; text-decoration:none; color:var(--ink); font-weight:700; padding:16px 18px; background:var(--paper); border:1px solid var(--line); border-radius:var(--radius); transition:border-color .2s ease, transform .2s ease; }
   .contact-link:hover{ border-color:var(--leather); transform:translateX(4px); }
   .contact-link .ico{ width:22px; height:22px; flex-shrink:0; }
   .contact-link small{ display:block; font-weight:500; font-family:'JetBrains Mono',monospace; font-size:0.72rem; color:rgba(27,42,65,0.55); }
-
-  .map-frame{
-    border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; aspect-ratio:1/1;
-    background:linear-gradient(160deg, var(--felt-2), var(--felt));
-    display:flex; align-items:center; justify-content:center;
-  }
-  .map-frame svg{ width:70%; opacity:0.8; }
 
   /* ---------- Footer ---------- */
   footer{ background:var(--leather-dark); color:rgba(241,231,208,0.7); padding:40px 0; }
@@ -281,73 +164,64 @@
   .copyright{ font-size:0.78rem; margin-top:18px; color:rgba(241,231,208,0.4); }
 
   /* ---------- Toast ---------- */
-  .toast{
-    position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px);
-    background:var(--ink); color:var(--felt); padding:14px 22px; border-radius:var(--radius);
-    font-size:0.9rem; box-shadow:var(--shadow); opacity:0; pointer-events:none;
-    transition:opacity .25s ease, transform .25s ease; z-index:100; text-align:center;
-  }
+  .toast{ position:fixed; bottom:28px; left:50%; transform:translateX(-50%) translateY(20px); background:var(--ink); color:var(--felt); padding:14px 22px; border-radius:var(--radius); font-size:0.9rem; box-shadow:var(--shadow); opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease; z-index:100; text-align:center; max-width:90vw; }
   .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); pointer-events:auto; }
 
   /* ---------- Responsive ---------- */
   @media (max-width: 900px){
-    .hero-inner, .about-grid, .order-grid, .contact-grid{ grid-template-columns:1fr; }
+    .hero-inner, .order-grid{ grid-template-columns:1fr; }
     .hero-art{ order:-1; }
     .grid-products{ grid-template-columns:repeat(2,1fr); }
     .pay-grid{ grid-template-columns:1fr; }
-    nav.links{ position:fixed; top:70px; left:0; right:0; background:var(--felt);
-      flex-direction:column; padding:20px 28px; gap:18px; border-bottom:1px solid var(--line);
-      transform:translateY(-140%); transition:transform .3s ease; }
+    nav.links{ position:fixed; top:70px; left:0; right:0; background:var(--felt); flex-direction:column; padding:20px 28px; gap:18px; border-bottom:1px solid var(--line); transform:translateY(-140%); transition:transform .3s ease; }
     nav.links.open{ transform:translateY(0); }
     .burger{ display:block; }
     .nav-cta{ display:none; }
   }
   @media (max-width: 620px){
-      .grid-products{ grid-template-columns:1fr; }
-      .field-row{ grid-template-columns:1fr; }
+    .grid-products{ grid-template-columns:1fr; }
+    .field-row{ grid-template-columns:1fr; }
 
-      .hero{ padding:60px 0 40px; }
-      .hero h1{ font-size:2rem; }
-      .hero p.lead{ font-size:0.95rem; }
-      .eyebrow{ font-size:0.68rem; }
-      .hero-badge{ width:88px; height:88px; font-size:0.58rem; }
+    .hero{ padding:44px 0 30px; }
+    .hero h1{ font-size:2rem; }
+    .hero p.lead{ font-size:0.95rem; }
+    .eyebrow{ font-size:0.68rem; }
+    .hero-badge{ width:88px; height:88px; font-size:0.58rem; }
 
-      .about h2, .section-head h2, .contact h2{ font-size:1.5rem; }
-      .about p{ font-size:0.92rem; }
-      .stat b{ font-size:1.3rem; }
-      .stat span{ font-size:0.72rem; }
+    .about{ padding:24px 0; }
+    .about h2, .section-head h2, .contact h2{ font-size:1.5rem; }
+    .about p{ font-size:0.92rem; }
 
-      .card-body h3{ font-size:1.05rem; }
-      .card-body p{ font-size:0.82rem; }
-      .price{ font-size:0.92rem; }
+    .products, .order, .payment, .contact{ padding:32px 0; }
+    .section-head{ margin-bottom:24px; }
+    .grid-products{ gap:16px; }
+    .card-body{ padding:16px 16px 18px; gap:6px; }
+    .card-body h3{ font-size:1.05rem; }
+    .card-body p{ font-size:0.82rem; }
+    .price{ font-size:0.92rem; }
 
-      .btn{ padding:12px 20px; font-size:0.88rem;.about, .products, .order, .payment, .contact{ padding:44px 0; }
-      .hero{ padding:44px 0 30px; }
-      .section-head{ margin-bottom:24px; }
-      .about-grid, .order-grid, .contact-grid{ gap:26px; }
-      .stat-row{ gap:20px; margin-top:18px; }
-      .grid-products{ gap:16px; }
-      .card-body{ padding:16px 16px 18px; gap:6px; }
-      .btn-row{ gap:10px; }
-      .contact-links{ gap:10px; }
-      .contact-link{ padding:12px 14px; }
-      .pay-grid{ gap:14px; }
-      .pay-card{ padding:12px; }
-.pay-card .pay-icon{ width:26px; height:26px; margin-bottom:8px; }
-.pay-card h3{ font-size:0.88rem; }
-.pay-card p{ font-size:0.74rem; }
-      form{ gap:12px; }
-      .field{ gap:5px; } }
-    }
+    .btn{ padding:12px 20px; font-size:0.88rem; }
+    .btn-row{ gap:10px; }
+
+    form{ gap:12px; }
+    .field{ gap:5px; }
+
+    .pay-grid{ gap:14px; }
+    .pay-card{ padding:14px; }
+    .pay-card .pay-icon{ width:28px; height:28px; margin-bottom:8px; }
+    .pay-card h3{ font-size:0.92rem; }
+    .pay-card p{ font-size:0.78rem; }
+    .pay-card .mono{ font-size:0.74rem; }
+
+    .contact-links{ gap:10px; }
+    .contact-link{ padding:12px 14px; }
+  }
 
   @media (prefers-reduced-motion: reduce){
-   html{ scroll-behavior:smooth; overflow-x:hidden; max-width:100vw; }
+    html{ scroll-behavior:auto; }
     *{ transition:none !important; }
   }
 </style>
-  <style>.pay-icon{width:32px !important; height:32px !important;}</style>
- <style>img,svg{max-width:100% !important; height:auto;} body{overflow-x:hidden;}</style>
-  <style>.pay-grid,.grid-products,.order-grid,.contact-grid,.about-grid,.hero-inner,.field-row{min-width:0;}</style>
 </head>
 <body>
 
@@ -385,7 +259,7 @@
   <div class="wrap hero-inner">
     <div>
       <div class="eyebrow">Хэнтий аймаг</div>
-      <h1> <em>Khiimori</em><br>гутал, эмээл</h1>
+      <h1><em>Khiimori</em><br>гутал, эмээл</h1>
       <div class="btn-row">
         <a href="#order" class="btn btn-primary">Захиалга өгөх →</a>
         <a href="#products" class="btn btn-outline">Бүтээгдэхүүн үзэх</a>
@@ -404,10 +278,8 @@
 
 <!-- ============ ABOUT ============ -->
 <section class="about" id="about">
-  <div class="wrap about-grid">
-    <div>
-      <h2>Монгол морины нуруунд тохирсон чанартай эмээл<br>гараар урлан бүтээдэг.</h2>
-    </div>
+  <div class="wrap">
+    <h2>Монгол морины нуруунд тохирсон чанартай эмээл<br>гараар урлан бүтээдэг.</h2>
   </div>
 </section>
 
@@ -415,9 +287,7 @@
 <section class="products" id="products">
   <div class="wrap">
     <div class="section-head">
-      <div>
-        <h2>Бүтээгдэхүүн</h2>
-         <div>
+      <h2>Бүтээгдэхүүн</h2>
       <div class="cat-tabs">
         <span class="cat-tab active">Бүгд</span>
         <span class="cat-tab">Гутал</span>
@@ -431,7 +301,7 @@
       <div class="card">
         <div class="card-art">
           <span class="card-tag">Гутал</span>
-          <img src="Unknown-3.jpg" alt="Буриад гутал" style="width:100%; height:100%; object-fit:cover;">
+          <img src="Unknown-3.jpg" alt="Буриад гутал">
         </div>
         <div class="card-body">
           <h3>Буриад гутал</h3>
@@ -440,7 +310,7 @@
             <span class="price">₮285,000</span>
             <span class="mono" style="font-size:0.72rem;color:rgba(27,42,65,0.5)">36–46 хэмжээ</span>
           </div>
-          <a href="#order" class="card-cta" onclick="presetProduct('Хантааз гутал — Уламжлалт')">Захиалах</a>
+          <a href="#order" class="card-cta" onclick="presetProduct('Буриад гутал')">Захиалах</a>
         </div>
       </div>
 
@@ -448,7 +318,7 @@
       <div class="card">
         <div class="card-art">
           <span class="card-tag">Гутал</span>
-          <img src="Unknown-3.jpg" alt="Буриад гутал" style="width:100%; height:100%; object-fit:cover;">
+          <img src="Unknown-3.jpg" alt="Эмэгтэй гутал">
         </div>
         <div class="card-body">
           <h3>Эмэгтэй гутал — Хээтэй</h3>
@@ -465,16 +335,16 @@
       <div class="card">
         <div class="card-art">
           <span class="card-tag">Эмээл</span>
-         <img src="Unknown-3.jpg" alt="Буриад гутал" style="width:100%; height:100%; object-fit:cover;">
+          <img src="Unknown-3.jpg" alt="Эмээл">
         </div>
         <div class="card-body">
-          <h3>эмээл</h3>
+          <h3>Эмээл</h3>
           <p>эмээл.</p>
           <div class="card-price-row">
             <span class="price">₮1,250,000</span>
             <span class="mono" style="font-size:0.72rem;color:rgba(27,42,65,0.5)">том/дунд</span>
           </div>
-          <a href="#order" class="card-cta" onclick="presetProduct('Тахилгат эмээл — Мөнгөн чимэглэлтэй')">Захиалах</a>
+          <a href="#order" class="card-cta" onclick="presetProduct('Эмээл')">Захиалах</a>
         </div>
       </div>
 
@@ -486,10 +356,8 @@
 <section class="order" id="order">
   <div class="wrap">
     <div class="section-head">
-      <div>
-        <h2>Захиалга өгөх</h2>
-        <p>Мэдээллээ бөглөөд илгээхэд бид 24 цагийн дотор утсаар холбогдож, хэмжээ, үнэ тохирно.</p>
-      </div>
+      <h2>Захиалга өгөх</h2>
+      <p>Мэдээллээ бөглөөд илгээхэд бид 24 цагийн дотор утсаар холбогдож, хэмжээ, үнэ тохирно.</p>
     </div>
     <div class="order-grid">
       <form id="orderForm">
@@ -503,21 +371,18 @@
             <input id="fphone" name="fphone" type="tel" placeholder="9911 2233" required>
           </div>
         </div>
-   <div class="field">
-  <div class="field-row">
-          <div class="field">
-            <label for="fproduct">Бүтээгдэхүүн</label>
-            <select id="fproduct" name="fproduct" required>
-              <option value="">Сонгох...</option>
-              <option>гутал</option>
-              <option>Эмэгтэй гутал</option>
-              <option>Хүүхдийн гутал</option>
-              <option>эмээл</option>
-              <option>Өдөр тутмын эмээл — Энгийн</option>
-              <option>эмээл</option>
-            </select>
-          </div>
-          <div class="field">
+
+        <div class="field">
+          <label for="fproduct">Бүтээгдэхүүн</label>
+          <select id="fproduct" name="fproduct" required>
+            <option value="">Сонгох...</option>
+            <option>Буриад гутал</option>
+            <option>Эмэгтэй гутал — Хээтэй</option>
+            <option>Хүүхдийн гутал</option>
+            <option>Эмээл</option>
+            <option>Өдөр тутмын эмээл — Энгийн</option>
+          </select>
+        </div>
 
         <div class="field-row">
           <div class="field">
@@ -529,10 +394,14 @@
             <select id="fpay" name="fpay">
               <option>Банкны шилжүүлэг</option>
               <option>QPay / Хаан банк</option>
+              <option>Хүргэлтийн үед бэлнээр</option>
+            </select>
+          </div>
+        </div>
 
         <div class="field">
           <label for="fnote">Нэмэлт тэмдэглэл</label>
-          <textarea id="fnote" name="fnote" rows="3" placeholder="">Нэмэлт тэмдэглэл</textarea>
+          <textarea id="fnote" name="fnote" rows="3" placeholder="Өнгө, хэмжээ, хүргэх огноо гэх мэт хүсэлтээ бичнэ үү"></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Захиалга илгээх →</button>
@@ -544,7 +413,9 @@
           <h4>Хэрхэн ажилладаг вэ</h4>
           <ul>
             <li>1. Захиалгын форм бөглөнө</li>
-            <li>3. Урьдчилгаа төлбөр төлнө (50%)</li>
+            <li>2. Урьдчилгаа төлбөр төлнө (50%)</li>
+          </ul>
+        </div>
         <div class="info-card">
           <h4>Ажилтантай холбогдох</h4>
           <div class="btn-row" style="margin-top:14px;">
@@ -563,17 +434,15 @@
 <section class="payment" id="payment">
   <div class="wrap">
     <div class="section-head">
-      <div>
-        <h2>Төлбөрийн мэдээлэл</h2>
-        <p>Дараах аль ч хэлбэрээр төлбөрөө хийж болно. Урьдчилгаа 50%-ийг захиалга баталгаажсаны дараа төлнө.</p>
-      </div>
+      <h2>Төлбөрийн мэдээлэл</h2>
+      <p>Дараах аль ч хэлбэрээр төлбөрөө хийж болно. Урьдчилгаа 50%-ийг захиалга баталгаажсаны дараа төлнө.</p>
     </div>
     <div class="pay-grid">
       <div class="pay-card">
         <svg class="pay-icon" viewBox="0 0 48 48" fill="none" stroke="#6B4226" stroke-width="2"><rect x="4" y="14" width="40" height="26" rx="2"/><line x1="4" y1="22" x2="44" y2="22"/><line x1="10" y1="32" x2="22" y2="32"/></svg>
         <h3>Банкны шилжүүлэг</h3>
-      Бүх банк-аар шилжүүлэг хийж болно
-        <span class="mono">Хаан банк: 5957070053<br>yтга: утасны дугаар</span>
+        <p>Бүх банк-аар шилжүүлэг хийж болно</p>
+        <span class="mono">Хаан банк: 5957070053<br>Утга: утасны дугаар</span>
       </div>
       <div class="pay-card">
         <svg class="pay-icon" viewBox="0 0 48 48" fill="none" stroke="#6B4226" stroke-width="2"><rect x="10" y="4" width="28" height="40" rx="3"/><line x1="10" y1="36" x2="38" y2="36"/></svg>
@@ -582,35 +451,41 @@
         <span class="mono">Захиалгын дугаараар QR илгээнэ</span>
       </div>
       <div class="pay-card">
-        <svg class="pay-icon" viewBox="0 0 48 48" fill="none" stroke="#6B4226" stroke-width="2"><path d="M6 12 L24 24 L42 12" /><rect x="6" y="8" width="36" height="30" rx="3"/></svg>
+        <svg class="pay-icon" viewBox="0 0 48 48" fill="none" stroke="#6B4226" stroke-width="2"><path d="M6 12 L24 24 L42 12"/><rect x="6" y="8" width="36" height="30" rx="3"/></svg>
+        <h3>Бэлнээр</h3>
+        <p>Хүргэлтийн үед бэлнээр төлөх боломжтой.</p>
+        <span class="mono">Хүргэлтийн хураамж тусдаа тооцно</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ CONTACT ============ -->
 <section class="contact" id="contact">
-  <div class="wrap contact-grid">
-    <div>
-      <h2>Холбоо барих</h2>
-      <p>Асуулт, тусгай захиалга, эсвэл дэлгүүрт биечлэн зочлохыг хүсвэл доорх сувгуудаар холбогдоорой.</p>
-      <div class="contact-links">
-        <a class="contact-link" href="tel:+97696033183">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#1B2A41" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>+976 96033183 <small>Утсаар холбогдох</small></span>
-        </a>
-        <a class="contact-link" href="https://m.me/ulaanart.mn" target="_blank" rel="noopener">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#1B2A41" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          <span>Facebook Messenger<small>М.Эрдэнэтулга</small></span>
-        </a>
-        <a class="contact-link" href="https://instagram.com/ulaanart.mn" target="_blank" rel="noopener">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#1B2A41" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#1B2A41"/></svg>
-          <span>Instagram<small>erdennnem</small></span>
-        </a>
-        <a class="contact-link" href="mailto:order@ulaanart.mn">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#1B2A41" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
-          <span>erdennem@gmail.com<small>И-мэйлээр бичих</small></span>
-        </a>
-      </div>
-</div>
+  <div class="wrap">
+    <h2>Холбоо барих</h2>
+    <p>Асуулт, тусгай захиалга, эсвэл дэлгүүрт биечлэн зочлохыг хүсвэл доорх сувгуудаар холбогдоорой.</p>
+    <div class="contact-links">
+      <a class="contact-link" href="tel:+97696033183">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#1B2A41" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>+976 96033183 <small>Утсаар холбогдох</small></span>
+      </a>
+      <a class="contact-link" href="https://m.me/ulaanart.mn" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#1B2A41" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span>Facebook Messenger<small>М.Эрдэнэтулга</small></span>
+      </a>
+      <a class="contact-link" href="https://instagram.com/ulaanart.mn" target="_blank" rel="noopener">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#1B2A41" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#1B2A41"/></svg>
+        <span>Instagram<small>erdennnem</small></span>
+      </a>
+      <a class="contact-link" href="mailto:erdennem@gmail.com">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#1B2A41" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        <span>erdennem@gmail.com<small>И-мэйлээр бичих</small></span>
+      </a>
     </div>
-  </section>
+  </div>
+</section>
+
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
@@ -630,13 +505,11 @@
 <div class="toast" id="toast">Захиалга илгээгдлээ! Бид тантай удахгүй холбогдоно.</div>
 
 <script>
-  // Mobile nav toggle
   const burger = document.getElementById('burgerBtn');
   const navLinks = document.getElementById('navLinks');
   burger.addEventListener('click', () => navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
-  // Preset product from card click
   function presetProduct(name){
     setTimeout(() => {
       const sel = document.getElementById('fproduct');
@@ -644,7 +517,6 @@
     }, 300);
   }
 
-  // Order form submission -> opens mailto with prefilled details
   const form = document.getElementById('orderForm');
   const toast = document.getElementById('toast');
 
@@ -653,9 +525,7 @@
     const data = new FormData(form);
     const name = data.get('fname') || '';
     const phone = data.get('fphone') || '';
-    const addr = data.get('faddr') || '';
     const product = data.get('fproduct') || '';
-    const size = data.get('fsize') || '';
     const qty = data.get('fqty') || '1';
     const pay = data.get('fpay') || '';
     const note = data.get('fnote') || '';
@@ -663,9 +533,7 @@
     const body = [
       'Захиалагч: ' + name,
       'Утас: ' + phone,
-      'Хаяг: ' + addr,
       'Бүтээгдэхүүн: ' + product,
-      'Хэмжээ: ' + size,
       'Тоо ширхэг: ' + qty,
       'Төлбөрийн хэлбэр: ' + pay,
       'Тэмдэглэл: ' + note
